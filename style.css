@@ -1,6 +1,6 @@
 /*
 File: style.css
-Version: 0.5
+Version: 0.6
 Last updated: 2026-07-29
 System: frontend
 */
@@ -155,6 +155,7 @@ button {
   line-height: 1.95;
   letter-spacing: -0.02em;
   text-align: right;
+  display: block;
 }
 
 @media (max-width: 640px) {
