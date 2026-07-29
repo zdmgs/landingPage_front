@@ -1,3 +1,10 @@
+/*
+File: script.js
+Version: 0.2
+Last updated: 2026-07-29
+System: frontend
+*/
+
 const translations = {
   pt: {
     label: 'apresentação',

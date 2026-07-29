@@ -1,3 +1,10 @@
+/*
+File: style.css
+Version: 0.2
+Last updated: 2026-07-29
+System: frontend
+*/
+
 :root {
   --bg: #313131;
   --surface: #3a3a3a;
@@ -26,7 +33,7 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   text-transform: lowercase;
 }
 
@@ -156,7 +163,11 @@ a {
   border: 1px solid var(--text);
   background: var(--text);
   color: var(--bg);
-  transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
 }
 
 .button:hover,
