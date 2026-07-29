@@ -1,12 +1,13 @@
 /*
 File: script.js
-Version: 0.3
+Version: 0.4
 Last updated: 2026-07-29
 System: frontend
 */
 
 const translations = {
   pt: {
+    title: 'luiz domingues',
     content: `desenvolvimento ↓
 analista de negócios ;
 analista de requisitos ;
@@ -21,6 +22,7 @@ headhunter ;
 recrutador .`
   },
   en: {
+    title: 'luiz domingues',
     content: `development ↓
 business analyst ;
 functional analyst ;
