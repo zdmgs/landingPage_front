@@ -1,6 +1,6 @@
 /*
 File: style.css
-Version: 0.4
+Version: 0.5
 Last updated: 2026-07-29
 System: frontend
 */
@@ -32,7 +32,7 @@ body {
   color: var(--text);
   font-family: "Space Mono", monospace;
   text-transform: lowercase;
-  text-align: right;
+  text-align: left;
 }
 
 a,
@@ -53,8 +53,8 @@ button {
 .page-shell {
   position: relative;
   min-height: 100vh;
-  width: min(100%, 1120px);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 24px;
   overflow: hidden;
 }
@@ -142,30 +142,31 @@ button {
   position: relative;
   z-index: 2;
   min-height: calc(100vh - 96px);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2rem;
-  padding-top: 2rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  padding-top: 2.5rem;
 }
 
 .hero__title {
   margin: 0;
-  max-width: 7ch;
-  font-size: clamp(3.5rem, 10vw, 7rem);
-  line-height: 0.9;
-  letter-spacing: -0.05em;
-  text-align: right;
+  width: min(100%, 9ch);
+  font-size: clamp(3.6rem, 12vw, 8rem);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  text-align: left;
 }
 
 .hero__content {
-  width: min(100%, 760px);
+  width: min(100%, 42rem);
   white-space: pre-line;
   font-size: clamp(1rem, 1.4vw, 1.2rem);
   line-height: 1.9;
   letter-spacing: -0.02em;
-  text-align: right;
+  text-align: left;
   display: block;
   margin-top: 0.25rem;
 }
@@ -181,15 +182,14 @@ button {
 
   .hero {
     min-height: calc(100vh - 84px);
-    align-items: flex-end;
-    gap: 1.5rem;
-    padding-top: 1.5rem;
+    gap: 2rem;
+    padding-top: 2rem;
   }
 
   .hero__title {
-    max-width: 100%;
-    font-size: clamp(2.8rem, 16vw, 4.6rem);
-    line-height: 0.92;
+    width: 100%;
+    font-size: clamp(2.8rem, 16vw, 4.8rem);
+    line-height: 0.9;
   }
 
   .hero__content {
