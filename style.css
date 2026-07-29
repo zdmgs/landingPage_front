@@ -1,18 +1,21 @@
 /*
 File: style.css
-Version: 0.4
+Version: 0.2
 Last updated: 2026-07-29
 System: frontend
 */
 
 :root {
-  --bg-start: #141414;
-  --bg-end: #313131;
+  --bg: #313131;
+  --surface: #3a3a3a;
+  --surface-2: #444444;
   --text: #f2f2f2;
-  --text-muted: rgba(242, 242, 242, 0.72);
-  --surface: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.12);
+  --text-muted: #cfcfcf;
+  --border: rgba(242, 242, 242, 0.16);
+  --border-strong: rgba(242, 242, 242, 0.32);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
   --radius-pill: 999px;
+  --radius-card: 28px;
   --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -28,70 +31,42 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  background: var(--bg);
   color: var(--text);
   font-family: "Space Mono", monospace;
   text-transform: lowercase;
-  text-align: left;
 }
 
-a,
-button {
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
   font: inherit;
 }
 
-button {
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.noise-defs {
-  position: absolute;
-}
-
 .page-shell {
-  position: relative;
   min-height: 100vh;
   width: min(100%, 1120px);
   margin: 0 auto;
   padding: 24px;
-  overflow: hidden;
-}
-
-.page-shell__grain {
-  position: absolute;
-  inset: 0;
-  opacity: 0.16;
-  pointer-events: none;
-  filter: url(#noiseFilter);
-}
-
-.page-shell__grain::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.05) 0 1px,
-      transparent 1px 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.03) 0 1px,
-      transparent 1px 4px
-    );
-  mix-blend-mode: soft-light;
+  display: flex;
+  flex-direction: column;
 }
 
 .topbar {
-  position: relative;
-  z-index: 2;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 32px;
+}
+
+.lang-toggle {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .lang-toggle__track {
@@ -104,7 +79,7 @@ button {
   border-radius: var(--radius-pill);
   background: var(--surface);
   border: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
   overflow: hidden;
 }
 
@@ -136,25 +111,79 @@ button {
 }
 
 .lang-toggle__option.is-active {
-  color: #141414;
+  color: var(--bg);
 }
 
 .hero {
-  position: relative;
-  z-index: 2;
-  min-height: calc(100vh - 96px);
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(32px, 8vw, 96px) 0;
 }
 
-.hero__content {
-  width: min(100%, 760px);
-  white-space: pre-line;
-  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-  line-height: 1.95;
-  letter-spacing: -0.02em;
-  text-align: left;
+.eyebrow {
+  margin: 0 0 16px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.5rem, 9vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  max-width: 8ch;
+}
+
+.hero__text {
+  margin: 28px 0 0;
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--text);
+  background: var(--text);
+  color: var(--bg);
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.button--secondary:hover,
+.button--secondary:focus-visible {
+  border-color: var(--text);
 }
 
 @media (max-width: 640px) {
@@ -166,15 +195,16 @@ button {
     margin-bottom: 18px;
   }
 
-  .hero {
-    min-height: calc(100vh - 84px);
-    align-items: flex-start;
-    padding-top: 48px;
+  .hero__text {
+    max-width: 100%;
   }
 
-  .hero__content {
+  .actions {
     width: 100%;
-    font-size: 1rem;
-    line-height: 1.85;
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
   }
 }

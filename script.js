@@ -1,38 +1,24 @@
 /*
 File: script.js
-Version: 0.4
+Version: 0.2
 Last updated: 2026-07-29
 System: frontend
 */
 
 const translations = {
   pt: {
-    content: `gerenciamento ↓
-product owner ;
-scrum master .
-
-desenvolvimento ↓
-analista de testes (qa) ;
-analista de requisitos ;
-analista de negócios .
-
-recrutamento ↓
-headhunter ;
-recrutador .`
+    label: 'apresentação',
+    description:
+      'texto de apresentação em português para testar a landing page e validar o comportamento do seletor de idioma.',
+    linkedin: 'linkedin',
+    email: 'email'
   },
   en: {
-    content: `management ↓
-product owner ;
-scrum master .
-
-development ↓
-functional analyst ;
-test (qa) analyst ;
-business analyst .
-
-recruitment ↓
-headhunter ;
-recruiter .`
+    label: 'introduction',
+    description:
+      'english placeholder copy to test the landing page and confirm the language toggle behavior is working as expected.',
+    linkedin: 'linkedin',
+    email: 'email'
   }
 };
 
@@ -41,7 +27,7 @@ const toggle = document.querySelector('[data-lang-toggle]');
 const options = document.querySelectorAll('[data-lang-option]');
 const translatableNodes = document.querySelectorAll('[data-i18n]');
 
-let currentLanguage = 'en';
+let currentLanguage = 'pt';
 
 function applyLanguage(language) {
   currentLanguage = language;
