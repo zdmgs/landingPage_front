@@ -1,6 +1,6 @@
 /*
 File: script.js
-Version: 0.7
+Version: 0.4
 Last updated: 2026-07-29
 System: frontend
 */
@@ -50,7 +50,7 @@ function applyLanguage(language) {
 
   translatableNodes.forEach((node) => {
     const key = node.dataset.i18n;
-    if (translations[language] && translations[language][key]) {
+    if (translations[language][key]) {
       node.textContent = translations[language][key];
     }
   });
