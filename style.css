@@ -1,6 +1,6 @@
 /*
 File: style.css
-Version: 0.9
+Version: 0.10
 Last updated: 2026-07-29
 System: frontend
 */
@@ -119,6 +119,16 @@ button {
   overflow: hidden;
 }
 
+.lang-toggle--social .lang-toggle__track {
+  width: auto;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+.lang-toggle--email .lang-toggle__track {
+  width: 80px;
+}
+
 .lang-toggle__thumb {
   position: absolute;
   top: 4px;
@@ -128,6 +138,10 @@ button {
   border-radius: var(--radius-pill);
   background: var(--text);
   transition: transform var(--transition);
+}
+
+.lang-toggle--social .lang-toggle__thumb {
+  display: none;
 }
 
 .lang-toggle[data-lang="en"] .lang-toggle__thumb {
@@ -144,6 +158,11 @@ button {
   padding: 0 14px;
   color: var(--text-muted);
   transition: color var(--transition);
+}
+
+.lang-toggle--social .lang-toggle__option {
+  width: 100%;
+  color: #141414;
 }
 
 .lang-toggle__option.is-active {
