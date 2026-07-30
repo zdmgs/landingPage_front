@@ -1,74 +1,93 @@
 <!--
 File: index.html
-Version: 0.6
-Last updated: 2026-07-29
+Version: 0.7
+Last updated: 2026-07-30
 System: frontend
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luiz Domingues</title>
-  <meta name="description" content="Landing page pessoal de Luiz Domingues." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css" />
+<!-- configurações básicas do documento e codificação -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- título da aba do navegador -->
+<title>Luiz Domingues</title>
+<!-- descrição para SEO e compartilhamento -->
+<meta name="description" content="Landing page pessoal de Luiz Domingues." />
+<!-- otimização de carregamento da fonte no Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- fonte monoespaçada usada na página -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<!-- arquivo de estilos principal -->
+<link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <svg class="noise-defs" aria-hidden="true" width="0" height="0">
-    <filter id="noiseFilter">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency="0.85"
-        numOctaves="2"
-        stitchTiles="stitch"
-      />
-      <feColorMatrix
-        type="saturate"
-        values="0"
-      />
-    </filter>
-  </svg>
+<!-- definição do filtro SVG usado para gerar o ruído/grain de fundo -->
+<svg class="noise-defs" aria-hidden="true" width="0" height="0">
+<filter id="noiseFilter">
+<feTurbulence
+type="fractalNoise"
+baseFrequency="0.85"
+numOctaves="2"
+stitchTiles="stitch"
+/>
+<feColorMatrix
+type="saturate"
+values="0"
+/>
+</filter>
+</svg>
 
-  <div class="page-shell">
-    <div class="page-shell__grain" aria-hidden="true"></div>
+<!-- container principal da página -->
+<div class="page-shell">
+<!-- camada de grain/ruído aplicada sobre o fundo -->
+<div class="page-shell__grain" aria-hidden="true"></div>
 
-    <header class="topbar">
-      <a href="https://www.linkedin.com/in/luizdominguesn/" target="_blank" rel="noreferrer noopener" aria-label="linkedin" class="lang-toggle lang-toggle--social">
-        <span class="lang-toggle__track">
-          <span class="lang-toggle__thumb"></span>
-          <span class="lang-toggle__option is-active">linkedin</span>
-        </span>
-      </a>
-      <a href="mailto:jobs@luizdomingues.com" aria-label="email" class="lang-toggle lang-toggle--social lang-toggle--email">
-        <span class="lang-toggle__track">
-          <span class="lang-toggle__thumb"></span>
-          <span class="lang-toggle__option is-active">email</span>
-        </span>
-      </a>
-      <button
-        class="lang-toggle"
-        type="button"
-        aria-label="Toggle language"
-        data-lang-toggle
-        data-lang="en"
-      >
-        <span class="lang-toggle__track">
-          <span class="lang-toggle__thumb"></span>
-          <span class="lang-toggle__option" data-lang-option="pt">br</span>
-          <span class="lang-toggle__option is-active" data-lang-option="en">en</span>
-        </span>
-      </button>
-    </header>
+<!-- barra superior com links sociais e toggle de idioma -->
+<header class="topbar">
+<!-- botão/link para o LinkedIn com estilo de toggle social -->
+<a href="https://www.linkedin.com/in/luizdominguesn/" target="_blank" rel="noreferrer noopener" aria-label="linkedin" class="lang-toggle lang-toggle--social">
+<span class="lang-toggle__track">
+<span class="lang-toggle__thumb"></span>
+<span class="lang-toggle__option is-active">linkedin</span>
+</span>
+</a>
+<!-- botão/link para o email com estilo de toggle social -->
+<a href="mailto:jobs@luizdomingues.com" aria-label="email" class="lang-toggle lang-toggle--social lang-toggle--email">
+<span class="lang-toggle__track">
+<span class="lang-toggle__thumb"></span>
+<span class="lang-toggle__option is-active">email</span>
+</span>
+</a>
+<!-- botão que alterna o idioma da página (pt/en) -->
+<button
+class="lang-toggle"
+type="button"
+aria-label="Toggle language"
+data-lang-toggle
+data-lang="en"
+>
+<span class="lang-toggle__track">
+<span class="lang-toggle__thumb"></span>
+<!-- opção de idioma português (br) -->
+<span class="lang-toggle__option" data-lang-option="pt">br</span>
+<!-- opção de idioma inglês (en), iniciando ativa -->
+<span class="lang-toggle__option is-active" data-lang-option="en">en</span>
+</span>
+</button>
+</header>
 
-    <main class="hero">
-      <h1 class="hero__title" data-i18n="title"></h1>
-      <div class="hero__content" data-i18n="content"></div>
-    </main>
-  </div>
+<!-- seção principal (hero) com título e conteúdo em destaque -->
+<main class="hero">
+<!-- título principal, preenchido via JavaScript conforme idioma -->
+<h1 class="hero__title" data-i18n="title"></h1>
+<!-- texto descritivo, também preenchido via JavaScript -->
+<div class="hero__content" data-i18n="content"></div>
+</main>
+</div>
 
-  <script src="./script.js"></script>
+<!-- arquivo JavaScript responsável pela lógica de tradução/toggle -->
+<script src="./script.js"></script>
 </body>
 </html>

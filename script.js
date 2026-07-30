@@ -1,14 +1,17 @@
 /*
 File: script.js
-Version: 0.5
-Last updated: 2026-07-29
+Version: 0.6
+Last updated: 2026-07-30
 System: frontend
 */
 
+// objeto com os textos em português e inglês
 const translations = {
-  pt: {
-    title: 'luiz domingues',
-    content: `desenvolvimento ↓
+pt: {
+// título exibido no <h1>
+title: 'luiz domingues',
+// conteúdo multi-linha exibido no bloco principal
+content: `desenvolvimento ↓
 analista de negócios ;
 analista de requisitos ;
 analista de testes (qa) .
@@ -20,10 +23,12 @@ scrum master .
 recrutamento ↓
 headhunter ;
 recrutador .`
-  },
-  en: {
-    title: 'luiz domingues',
-    content: `development ↓
+},
+en: {
+// mesma estrutura de título em inglês
+title: 'luiz domingues',
+// conteúdo equivalente em inglês
+content: `development ↓
 business analyst ;
 functional analyst ;
 test (qa) analyst .
@@ -35,40 +40,54 @@ scrum master .
 recruitment ↓
 headhunter ;
 recruiter .`
-  }
+}
 };
 
+// referência ao elemento <html> para mudar o atributo lang
 const root = document.documentElement;
+// botão de toggle de idioma (pt/en)
 const toggle = document.querySelector('[data-lang-toggle]');
+// opções visuais de idioma dentro do botão (br / en)
 const options = document.querySelectorAll('[data-lang-option]');
+// elementos que terão texto traduzido, identificados por data-i18n
 const translatableNodes = document.querySelectorAll('[data-i18n]');
 
+// idioma inicial da página
 let currentLanguage = 'en';
 
+// função que aplica um idioma em toda a interface
 function applyLanguage(language) {
-  currentLanguage = language;
-  root.lang = language === 'pt' ? 'pt-BR' : 'en';
+currentLanguage = language;
+// ajusta o atributo lang do <html> para acessibilidade e SEO
+root.lang = language === 'pt' ? 'pt-BR' : 'en';
 
-  if (toggle) toggle.dataset.lang = language;
+// atualiza o dataset do botão para refletir o idioma atual
+if (toggle) toggle.dataset.lang = language;
 
-  translatableNodes.forEach((node) => {
-    const key = node.dataset.i18n;
-    if (translations[language] && translations[language][key]) {
-      node.textContent = translations[language][key];
-    }
-  });
+// percorre cada nó traduzível e aplica o texto correspondente
+translatableNodes.forEach((node) => {
+const key = node.dataset.i18n; // pega a chave (title, content)
+if (translations[language] && translations[language][key]) {
+node.textContent = translations[language][key];
+}
+});
 
-  options.forEach((option) => {
-    const isActive = option.dataset.langOption === language;
-    option.classList.toggle('is-active', isActive);
-  });
+// atualiza o estado visual das opções de idioma (classe is-active)
+options.forEach((option) => {
+const isActive = option.dataset.langOption === language;
+option.classList.toggle('is-active', isActive);
+});
 }
 
+// adiciona o evento de clique no botão de toggle, se existir
 if (toggle) {
-  toggle.addEventListener('click', () => {
-    const nextLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
-    applyLanguage(nextLanguage);
-  });
+toggle.addEventListener('click', () => {
+// decide qual será o próximo idioma (alternando entre pt e en)
+const nextLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+// aplica o próximo idioma
+applyLanguage(nextLanguage);
+});
 }
 
+// aplica o idioma inicial na primeira renderização da página
 applyLanguage(currentLanguage);
