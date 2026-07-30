@@ -1,6 +1,6 @@
 /*
 File: style.css
-Version: 0.7
+Version: 0.8
 Last updated: 2026-07-29
 System: frontend
 */
@@ -97,8 +97,10 @@ button {
   justify-content: flex-end;
   margin-bottom: 28px;
   padding-right: 8px;
+  gap: 12px;
 }
 
+.social-link__track,
 .lang-toggle__track {
   position: relative;
   display: grid;
@@ -113,6 +115,14 @@ button {
   overflow: hidden;
 }
 
+.social-link__track {
+  width: 54px;
+  grid-template-columns: 1fr;
+  background: var(--text);
+  border-color: transparent;
+}
+
+.social-link__thumb,
 .lang-toggle__thumb {
   position: absolute;
   top: 4px;
@@ -124,10 +134,12 @@ button {
   transition: transform var(--transition);
 }
 
-.lang-toggle[data-lang="en"] .lang-toggle__thumb {
-  transform: translateX(100%);
+.social-link__thumb {
+  width: calc(100% - 8px);
+  background: var(--bg-start);
 }
 
+.social-link__option,
 .lang-toggle__option {
   position: relative;
   z-index: 1;
@@ -138,6 +150,15 @@ button {
   padding: 0 14px;
   color: var(--text-muted);
   transition: color var(--transition);
+}
+
+.social-link__option {
+  padding: 0;
+  color: var(--bg-start);
+}
+
+.lang-toggle[data-lang="en"] .lang-toggle__thumb {
+  transform: translateX(100%);
 }
 
 .lang-toggle__option.is-active {
@@ -185,6 +206,15 @@ button {
   .topbar {
     margin-bottom: 16px;
     padding-right: 6px;
+    gap: 8px;
+  }
+
+  .social-link__track {
+    width: 48px;
+  }
+
+  .lang-toggle__track {
+    width: 108px;
   }
 
   .hero {

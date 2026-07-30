@@ -1,6 +1,6 @@
 /*
 File: script.js
-Version: 0.4
+Version: 0.5
 Last updated: 2026-07-29
 System: frontend
 */
@@ -48,7 +48,8 @@ let currentLanguage = 'en';
 function applyLanguage(language) {
   currentLanguage = language;
   root.lang = language === 'pt' ? 'pt-BR' : 'en';
-  toggle.dataset.lang = language;
+
+  if (toggle) toggle.dataset.lang = language;
 
   translatableNodes.forEach((node) => {
     const key = node.dataset.i18n;
@@ -63,9 +64,11 @@ function applyLanguage(language) {
   });
 }
 
-toggle.addEventListener('click', () => {
-  const nextLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
-  applyLanguage(nextLanguage);
-});
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    const nextLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+    applyLanguage(nextLanguage);
+  });
+}
 
 applyLanguage(currentLanguage);
