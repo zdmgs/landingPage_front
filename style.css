@@ -1,6 +1,6 @@
 /*
 File: style.css
-Version: 0.10
+Version: 0.11
 Last updated: 2026-07-29
 System: frontend
 */
@@ -123,6 +123,8 @@ button {
   width: auto;
   grid-template-columns: 1fr;
   justify-content: center;
+  background: var(--text);
+  border-color: transparent;
 }
 
 .lang-toggle--email .lang-toggle__track {
@@ -162,7 +164,7 @@ button {
 
 .lang-toggle--social .lang-toggle__option {
   width: 100%;
-  color: #141414;
+  color: var(--bg-start);
 }
 
 .lang-toggle__option.is-active {
