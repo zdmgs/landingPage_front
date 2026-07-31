@@ -1,13 +1,13 @@
 /*
 File: script.js
-Version: 0.6
+Version: 0.7
 Last updated: 2026-07-30
 System: frontend
 */
 
 // objeto com os textos em português e inglês
 const translations = {
-pt: {
+br: {
 // título exibido no <h1>
 title: 'luiz domingues',
 // conteúdo multi-linha exibido no bloco principal
@@ -22,7 +22,10 @@ scrum master .
 
 recrutamento ↓
 headhunter ;
-recrutador .`
+recrutador .
+
+
+jobs@luizdomingues.com`
 },
 en: {
 // mesma estrutura de título em inglês
@@ -39,13 +42,16 @@ scrum master .
 
 recruitment ↓
 headhunter ;
-recruiter .`
+recruiter .
+
+
+jobs@luizdomingues.com`
 }
 };
 
 // referência ao elemento <html> para mudar o atributo lang
 const root = document.documentElement;
-// botão de toggle de idioma (pt/en)
+// botão de toggle de idioma (br/en)
 const toggle = document.querySelector('[data-lang-toggle]');
 // opções visuais de idioma dentro do botão (br / en)
 const options = document.querySelectorAll('[data-lang-option]');
@@ -59,7 +65,7 @@ let currentLanguage = 'en';
 function applyLanguage(language) {
 currentLanguage = language;
 // ajusta o atributo lang do <html> para acessibilidade e SEO
-root.lang = language === 'pt' ? 'pt-BR' : 'en';
+root.lang = language === 'br' ? 'br-BR' : 'en';
 
 // atualiza o dataset do botão para refletir o idioma atual
 if (toggle) toggle.dataset.lang = language;
@@ -82,8 +88,8 @@ option.classList.toggle('is-active', isActive);
 // adiciona o evento de clique no botão de toggle, se existir
 if (toggle) {
 toggle.addEventListener('click', () => {
-// decide qual será o próximo idioma (alternando entre pt e en)
-const nextLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+// decide qual será o próximo idioma (alternando entre br e en)
+const nextLanguage = currentLanguage === 'br' ? 'en' : 'br';
 // aplica o próximo idioma
 applyLanguage(nextLanguage);
 });
