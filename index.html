@@ -1,7 +1,7 @@
 <!--
 File: index.html
-Version: 0.8
-Last updated: 2026-07-30
+Version: 0.9
+Last updated: 2026-07-31
 System: frontend
 -->
 <!DOCTYPE html>
@@ -23,6 +23,9 @@ System: frontend
 <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+<!-- container do background animado Vanta -->
+<div id="vanta-bg"></div>
+
 <!-- definição do filtro SVG usado para gerar o ruído/grain de fundo -->
 <svg class="noise-defs" aria-hidden="true" width="0" height="0">
 <filter id="noiseFilter">
@@ -67,8 +70,7 @@ type="button"
 aria-label="Toggle language"
 data-lang-toggle
 data-lang="en"
->
-<span class="lang-toggle__track">
+> <span class="lang-toggle__track">
 <span class="lang-toggle__thumb"></span>
 <!-- opção de idioma português (br) -->
 <span class="lang-toggle__option" data-lang-option="br">br</span>
@@ -89,5 +91,26 @@ data-lang="en"
 
 <!-- arquivo JavaScript responsável pela lógica de tradução/toggle -->
 <script src="./script.js"></script>
+
+<!-- scripts do background animado Vanta Fog (arquivos locais) -->
+<script src="./vendor/three.min.js"></script>
+<script src="./vendor/vanta.fog.min.js"></script>
+<script>
+VANTA.FOG({
+el: "#vanta-bg",
+mouseControls: true,
+touchControls: true,
+gyroControls: false,
+minHeight: 200.0,
+minWidth: 200.0,
+highlightColor: 0xA0CB63,
+midtoneColor: 0x83B53C,
+lowlightColor: 0x6E9732,
+baseColor: 0x313131,
+blurFactor: 0.33,
+speed: 1.7,
+zoom: 1.2
+});
+</script>
 </body>
 </html>

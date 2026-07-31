@@ -1,27 +1,51 @@
-# Frontend Architecture
+<!--
+File: docs/architecture.md
+Version: 0.3
+Last updated: 2026-07-31
+System: docs
+-->
+Frontend Architecture
+Overview
 
-## Overview
-Frontend estático para landing page pessoal.
+Frontend estático para landing page pessoal com background animado usando Vanta.js.
+Stack
 
-## Stack
-- HTML
-- CSS
-- JavaScript
+    HTML
 
-## Hosting and services
-- GitHub Pages: publicação do frontend
-- GitHub: versionamento e histórico
+    CSS
 
-## Domains
-- https://luizdomingues.com
-- https://www.luizdomingues.com
+    JavaScript
 
-## Deploy flow
-1. Editar arquivos do frontend no PC.
-2. Fazer commit.
-3. Fazer push para o GitHub.
-4. GitHub Pages publica a nova versão.
+    Three.js (local, vendor)
 
-## Security
-- Não salvar segredos no frontend.
-- O domínio customizado deve estar configurado com apex e www.
+    Vanta.js Fog (local, vendor)
+
+Hosting and services
+
+    GitHub Pages: publicação do frontend
+
+    GitHub: versionamento e histórico
+
+Domains
+
+    https://luizdomingues.com
+
+    https://www.luizdomingues.com
+
+Deploy flow
+
+    Editar arquivos do frontend no PC.
+
+    Fazer commit.
+
+    Fazer push para o GitHub.
+
+    GitHub Pages publica a nova versão.
+
+Security
+
+    Não salvar segredos no frontend.
+
+    O domínio customizado deve estar configurado com apex e www.
+
+    Bibliotecas de terceiros (Three.js, Vanta.js) são servidas localmente em vendor/ para reduzir dependência de CDN.

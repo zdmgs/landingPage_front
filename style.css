@@ -1,7 +1,7 @@
 /*
 File: style.css
-Version: 0.14
-Last updated: 2026-07-30
+Version: 0.15
+Last updated: 2026-07-31
 System: frontend
 */
 
@@ -18,10 +18,9 @@ System: frontend
 }
 
 /* reset básico de box-sizing para todos os elementos */
-
 * {
-    box-sizing: border-box;
-    }
+box-sizing: border-box;
+}
 
 /* estilos do elemento raiz (html), incluindo fundo com gradients */
 html {
@@ -48,6 +47,13 @@ text-transform: lowercase;
 text-align: left;
 }
 
+/* camada de fundo para o Vanta Fog */
+#vanta-bg {
+position: fixed;
+inset: 0;
+z-index: -1;
+}
+
 /* garante que links e botões herdem fonte do body */
 a,
 button {
@@ -70,11 +76,13 @@ cursor: pointer;
 /* posiciona o SVG de ruído de forma absoluta, sem interferir no layout */
 .noise-defs {
 position: absolute;
+z-index: 1;
 }
 
 /* container principal da página, controla padding e fluxo */
 .page-shell {
 position: relative;
+z-index: 2;
 min-height: 100dvh;
 width: 100%;
 margin: 0;
@@ -172,7 +180,7 @@ display: none;
 transform: translateX(100%);
 }
 
-/* estilo base de cada opção de toggle (pt / en / social) */
+/* estilo base de cada opção de toggle (br / en / social) */
 .lang-toggle__option {
 position: relative;
 z-index: 1;
