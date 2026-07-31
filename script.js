@@ -1,6 +1,6 @@
 /*
 File: script.js
-Version: 0.7
+Version: 0.8
 Last updated: 2026-07-30
 System: frontend
 */
