@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .logo-path {
+      fill: #3d4930;
+    }
+    @media (prefers-color-scheme: light) {
+      .logo-path {
+        fill: #80af47;
+      }
+    }
+  </style>
+  <path class="logo-path" d="M30,24.87V30H11.52V21l13.35-6.5v-.77H11.78v-5h17.7v8.72L16.14,24.1v.77Z"/>
+</svg>
