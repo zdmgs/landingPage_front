@@ -1,0 +1,15 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    polygon {
+      fill: #223000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      polygon {
+        fill: #b8ff00;
+      }
+    }
+  </style>
+
+  <polygon points="6.46 18.67 30.87 18.67 30.87 7.23 25.54 7.23 25.54 13.33 6.46 13.33 6.46 7.23 1.13 7.23 1.13 24.77 6.46 24.77 6.46 18.67"/>
+</svg>
