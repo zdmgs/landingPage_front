@@ -1,11 +1,11 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <style>
     .logo-path {
-      fill: #3d4930;
+      fill: #80af47;
     }
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
       .logo-path {
-        fill: #80af47;
+        fill: #3d4930;
       }
     }
   </style>
