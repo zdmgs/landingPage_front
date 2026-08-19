@@ -1,13 +1,15 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <style>
-    .logo-path {
-      fill: #80af47;
+    polygon {
+      fill: #3d4930;
     }
+
     @media (prefers-color-scheme: dark) {
-      .logo-path {
-        fill: #3d4930;
+      polygon {
+        fill: #80af47;
       }
     }
   </style>
-  <path class="logo-path" d="M30,24.87V30H11.52V21l13.35-6.5v-.77H11.78v-5h17.7v8.72L16.14,24.1v.77Z"/>
+
+  <polygon points="30,24.87 30,30 11.52,30 11.52,21 24.87,14.5 24.87,13.73 11.78,13.73 11.78,8.73 29.48,8.73 29.48,17.45 16.14,24.1 16.14,24.87"/>
 </svg>
