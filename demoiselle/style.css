@@ -1,4 +1,4 @@
-/* DEMOISELLE landingPage v0.1 */
+/* DEMOISELLE landingPage v0.2 */
 @font-face {
     font-family: 'GeistPixel';
     src: url('assets/GeistPixel.woff2') format('woff2');
@@ -136,6 +136,13 @@ h2 {
 .button:hover {
     transform: translateY(-3px);
     box-shadow: 5px 5px 0 var(--dark);
+}
+
+.hero-buttons,
+.footer-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .hero-meta {
@@ -382,6 +389,11 @@ h2 {
         display: none;
     }
 
+    .hero-buttons,
+    .footer-buttons {
+        flex-wrap: wrap;
+    }
+
     .button {
         align-self: flex-start;
         padding: 0.9rem 1rem;
@@ -478,6 +490,10 @@ h2 {
         align-items: flex-start;
         gap: 2rem;
         font-size: clamp(4rem, 19vw, 7rem);
+    }
+
+    .footer-buttons {
+        align-items: flex-start;
     }
 
     .footer-brand .button-outline {
