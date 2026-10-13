@@ -1,118 +1,71 @@
 <!--
 File: index.html
-Version: 0.10
-Last updated: 2026-08-19
+Version: 0.11
+Last updated: 2026-10-13
 System: frontend
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- configurações básicas do documento e codificação -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- título da aba do navegador -->
 <title>Luiz Domingues</title>
-<!-- descrição para SEO e compartilhamento -->
 <meta name="description" content="Landing page pessoal de Luiz Domingues." />
-<!-- favicon com suporte a modo escuro/claro -->
 <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-<!-- otimização de carregamento da fonte no Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<!-- fonte monoespaçada usada na página -->
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<!-- arquivo de estilos principal -->
 <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-<!-- container do background animado Vanta -->
-<div id="vanta-bg"></div>
-
-<!-- definição do filtro SVG usado para gerar o ruído/grain de fundo -->
-<svg class="noise-defs" aria-hidden="true" width="0" height="0">
-<filter id="noiseFilter">
-<feTurbulence
-type="fractalNoise"
-baseFrequency="0.85"
-numOctaves="2"
-stitchTiles="stitch"
-/>
-<feColorMatrix
-type="saturate"
-values="0"
-/>
-</filter>
-</svg>
-
-<!-- container principal da página -->
-<div class="page-shell">
-<!-- camada de grain/ruído aplicada sobre o fundo -->
-<div class="page-shell__grain" aria-hidden="true"></div>
-
-<!-- barra superior com links sociais e toggle de idioma -->
-<header class="topbar">
-<!-- botão/link para o LinkedIn com estilo de toggle social -->
-<a href="https://www.linkedin.com/in/luizdominguesn/" target="_blank" rel="noreferrer noopener" aria-label="linkedin" class="lang-toggle lang-toggle--social">
-<span class="lang-toggle__track">
-<span class="lang-toggle__thumb"></span>
-<span class="lang-toggle__option is-active">linkedin</span>
-</span>
-</a>
-<!-- botão/link para o email com estilo de toggle social -->
-<a href="mailto:jobs@luizdomingues.com" aria-label="email" class="lang-toggle lang-toggle--social lang-toggle--email">
-<span class="lang-toggle__track">
-<span class="lang-toggle__thumb"></span>
-<span class="lang-toggle__option is-active">email</span>
-</span>
-</a>
-<!-- botão que alterna o idioma da página (br/en) -->
-<button
-class="lang-toggle"
-type="button"
-aria-label="Toggle language"
-data-lang-toggle
-data-lang="en"
-> <span class="lang-toggle__track">
-<span class="lang-toggle__thumb"></span>
-<!-- opção de idioma português (br) -->
-<span class="lang-toggle__option" data-lang-option="br">br</span>
-<!-- opção de idioma inglês (en), iniciando ativa -->
-<span class="lang-toggle__option is-active" data-lang-option="en">en</span>
-</span>
-</button>
-</header>
-
-<!-- seção principal (hero) com título e conteúdo em destaque -->
-<main class="hero">
-<!-- título principal, preenchido via JavaScript conforme idioma -->
-<h1 class="hero__title" data-i18n="title"></h1>
-<!-- texto descritivo, também preenchido via JavaScript -->
-<div class="hero__content" data-i18n="content"></div>
-</main>
+<main class="page-shell">
+<section class="profile">
+<div class="profile__identity">
+<img class="profile__icon" src="./assets/icon.png" alt="" width="40" height="40" />
+<h1 data-i18n="name"></h1>
 </div>
+<p class="profile__bio" data-i18n="bio"></p>
+<div class="profile__links">
+<a class="profile__link" href="https://www.linkedin.com/in/luizdominguesn/" target="_blank" rel="noreferrer noopener">
+<svg class="profile__link-icon" aria-hidden="true" viewBox="0 0 24 24">
+<path d="M6.5 8.5V18M6.5 5.5V5.6M10.5 18V12.5C10.5 10.3 12 8.5 14.2 8.5C16.4 8.5 18 10.3 18 12.5V18M10.5 12.5V8.5" />
+</svg>
+<span>linkedin</span>
+</a>
+<a class="profile__link" href="mailto:jobs@luizdomingues.com">
+<svg class="profile__link-icon" aria-hidden="true" viewBox="0 0 24 24">
+<path d="M4.5 6.5H19.5V17.5H4.5V6.5ZM4.5 7L12 12.5L19.5 7" />
+</svg>
+<span>email</span>
+</a>
+</div>
+</section>
 
-<!-- arquivo JavaScript responsável pela lógica de tradução/toggle -->
+<section class="categories" aria-label="Áreas de atuação">
+<div class="category">
+<h2 data-i18n="developmentTitle"></h2>
+<p data-i18n="developmentRoles"></p>
+</div>
+<div class="category">
+<h2 data-i18n="managementTitle"></h2>
+<p data-i18n="managementRoles"></p>
+</div>
+<div class="category">
+<h2 data-i18n="recruitmentTitle"></h2>
+<p data-i18n="recruitmentRoles"></p>
+</div>
+<div class="category">
+<h2 data-i18n="aiTitle"></h2>
+<p data-i18n="aiRoles"></p>
+</div>
+</section>
+
+<button class="language-toggle" type="button" aria-label="Alterar idioma" data-language-toggle>
+<span class="language-toggle__option" data-language-option="br">br</span>
+<span class="language-toggle__option is-active" data-language-option="en">en</span>
+</button>
+</main>
+
 <script src="./script.js"></script>
-
-<!-- scripts do background animado Vanta Fog (arquivos locais) -->
-<script src="./vendor/three.min.js"></script>
-<script src="./vendor/vanta.fog.min.js"></script>
-<script>
-VANTA.FOG({
-el: "#vanta-bg",
-mouseControls: true,
-touchControls: true,
-gyroControls: false,
-minHeight: 200.0,
-minWidth: 200.0,
-highlightColor: 0xA0CB63,
-midtoneColor: 0x83B53C,
-lowlightColor: 0x6E9732,
-baseColor: 0x313131,
-blurFactor: 0.33,
-speed: 1.7,
-zoom: 1.2
-});
-</script>
 </body>
 </html>

@@ -1,51 +1,58 @@
 <!--
 File: docs/architecture.md
-Version: 0.3
-Last updated: 2026-07-31
+Version: 0.4
+Last updated: 2026-10-13
 System: docs
 -->
-Frontend Architecture
-Overview
 
-Frontend estático para landing page pessoal com background animado usando Vanta.js.
-Stack
+# Arquitetura do Frontend
 
-    HTML
+## Visão geral
 
-    CSS
+Frontend estático para a landing page pessoal de Luiz Domingues. A página apresenta uma breve bio, áreas de atuação profissional e um toggle para alternar o conteúdo entre português e inglês.
 
-    JavaScript
+## Stack
 
-    Three.js (local, vendor)
+- HTML
+- CSS
+- JavaScript
+- Google Fonts
 
-    Vanta.js Fog (local, vendor)
+## Estrutura
 
-Hosting and services
+- `index.html`: estrutura da página, perfil, categorias profissionais e toggle de idioma
+- `style.css`: estilos visuais, layout responsivo e grade de categorias
+- `script.js`: traduções e lógica de alternância entre os idiomas `br` e `en`
+- `assets/background.jpeg`: imagem de fundo da página
+- `assets/icon.png`: ícone exibido ao lado do nome
+- `assets/favicon.svg`: favicon do site
 
-    GitHub Pages: publicação do frontend
+## Layout
 
-    GitHub: versionamento e histórico
+- Em desktop, o perfil é exibido à esquerda e as categorias profissionais à direita.
+- Em telas intermediárias e mobile, o conteúdo é organizado verticalmente.
+- As categorias usam uma grade de duas colunas por duas linhas em telas estreitas.
+- Os textos dos cargos mantêm suas linhas definidas e não sofrem quebra automática.
 
-Domains
+## Hospedagem e serviços
 
-    https://luizdomingues.com
+- GitHub Pages: publicação do frontend
+- GitHub: versionamento e histórico do código
 
-    https://www.luizdomingues.com
+## Domínios
 
-Deploy flow
+- [https://luizdomingues.com](https://luizdomingues.com)
+- [https://www.luizdomingues.com](https://www.luizdomingues.com)
 
-    Editar arquivos do frontend no PC.
+## Fluxo de deploy
 
-    Fazer commit.
+1. Editar os arquivos do frontend localmente.
+2. Fazer commit das alterações.
+3. Fazer push para o repositório no GitHub.
+4. O GitHub Pages publica a nova versão.
 
-    Fazer push para o GitHub.
+## Segurança
 
-    GitHub Pages publica a nova versão.
-
-Security
-
-    Não salvar segredos no frontend.
-
-    O domínio customizado deve estar configurado com apex e www.
-
-    Bibliotecas de terceiros (Three.js, Vanta.js) são servidas localmente em vendor/ para reduzir dependência de CDN.
+- Não salvar segredos, tokens ou credenciais no frontend.
+- Todo arquivo entregue pelo navegador é público.
+- O domínio customizado deve permanecer configurado para os endereços apex e `www`.

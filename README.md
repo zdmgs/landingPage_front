@@ -1,56 +1,53 @@
 <!--
 File: README.md
-Version: 0.3
-Last updated: 2026-07-31
+Version: 0.4
+Last updated: 2026-10-13
 System: frontend
 -->
-Frontend
-Version
 
-1.0
-Purpose
+# Luiz Domingues
 
-Landing page pública de Luiz Domingues com background animado em WebGL.
-Tech stack
+Landing page pública pessoal de Luiz Domingues, com apresentação profissional, áreas de atuação e alternância entre português e inglês.
 
-    HTML
+## Versão
 
-    CSS
+1.1
 
-    JavaScript
+## Tecnologias
 
-    Three.js (local, vendor)
+- HTML
+- CSS
+- JavaScript
+- Google Fonts
 
-    Vanta.js Fog (local, vendor)
+## Funcionalidades
 
-Services
+- Layout responsivo para desktop e mobile
+- Categorias profissionais em grade 2×2 em telas estreitas
+- Toggle simples entre português (`br`) e inglês (`en`)
+- Imagem de fundo local
+- Ícone de perfil local
 
-    GitHub Pages: hospedagem do frontend
+## Serviços
 
-    GitHub: versionamento do código
+- GitHub Pages: hospedagem do frontend
+- GitHub: versionamento do código
 
-Production URLs
+## URLs de produção
 
-    Primary: https://luizdomingues.com
+- Principal: [https://luizdomingues.com](https://luizdomingues.com)
+- Secundária: [https://www.luizdomingues.com](https://www.luizdomingues.com)
 
-    Secondary: https://www.luizdomingues.com
+## Arquivos principais
 
-Main files
+- `index.html`
+- `style.css`
+- `script.js`
+- `assets/background.jpeg`
+- `assets/icon.png`
 
-    index.html
+## Segurança
 
-    style.css
-
-    script.js
-
-    vendor/three.min.js
-
-    vendor/vanta.fog.min.js
-
-Security notes
-
-    Não armazenar segredos no frontend.
-
-    Todo conteúdo entregue ao navegador é público.
-
-    Bibliotecas de terceiros são mantidas localmente no repositório em vendor/.
+- Não armazenar segredos no frontend.
+- Todo conteúdo entregue ao navegador é público.
+- Os arquivos de imagem em `assets/` são públicos.
