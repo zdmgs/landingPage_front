@@ -1,6 +1,6 @@
 /*
 File: style.css
-Version: 0.16
+Version: 0.17
 Last updated: 2026-10-13
 System: frontend
 */
@@ -98,6 +98,7 @@ margin: 16px 0 0;
 font-size: 0.8rem;
 line-height: 2;
 color: var(--text-muted);
+white-space: pre-line;
 }
 
 .profile__links {
@@ -214,28 +215,45 @@ backdrop-filter: blur(8px);
 
 @media (max-width: 640px) {
 .page-shell {
-gap: 32px;
-padding: 20px 20px 88px;
+min-height: 100dvh;
+gap: 18px;
+padding: 16px 20px 72px;
 }
 
 .language-toggle {
 right: 20px;
-bottom: 20px;
+bottom: 16px;
 }
 
 .categories {
-grid-template-columns: repeat(2, minmax(0, 1fr));
-column-gap: 16px;
-row-gap: 16px;
+grid-template-columns: 1fr;
+gap: 10px;
 }
 
 .category {
-padding: 16px;
+padding: 10px 14px;
+}
+
+.category h2 {
+margin-bottom: 4px;
+font-size: 0.8rem;
 }
 
 .category p,
 .profile__bio {
-font-size: 0.76rem;
-line-height: 1.9;
+font-size: 0.7rem;
+line-height: 1.55;
+}
+
+.profile__bio {
+margin-top: 10px;
+}
+
+.profile__links {
+margin-top: 10px;
+}
+
+.profile__link {
+font-size: 0.7rem;
 }
 }
